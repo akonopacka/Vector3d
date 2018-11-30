@@ -7,7 +7,12 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    Vector3D new_vector = Vector3D();
-    std::cout<<new_vector.print()<<endl;
-    return 0;
+    Vector3D A = Vector3D(1.5,3.2,4.6);
+    Vector3D B = Vector3D(2.1,4.6,7.9);
+    Vector3D resultOfAddition = A + B;
+    Vector3D resultOfSubtraction = A - B;
+    std::cout<<"Vector A:"<<A.print()<<endl;
+    std::cout<<"Vector B:"<<B.print()<<endl;
+    std::cout<<"A + B = "<<resultOfAddition.print()<<endl;
+    std::cout<<"A - B = "<<resultOfSubtraction.print()<<endl;
 }

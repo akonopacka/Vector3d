@@ -40,6 +40,16 @@ void Vector3D::setZ(const float t_z){
     z = t_z;
 }
 
+Vector3D Vector3D::operator+(Vector3D other){
+    Vector3D result(x+other.getX(),y+other.getY(),z+other.getZ());
+    return result;
+}
+
+Vector3D Vector3D::operator-(Vector3D other){
+    Vector3D result(x-other.getX(),y-other.getY(),z-other.getZ());
+    return result;
+}
+
 std::string Vector3D::print(){
     std::string coordinates = "("+std::to_string(x)+","+std::to_string(y)+","+std::to_string(z)+")";
     return coordinates;

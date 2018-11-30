@@ -21,6 +21,8 @@ public:
     void setX(const float t_x);
     void setY(const float t_y);
     void setZ(const float t_z);
+    Vector3D operator+(Vector3D other);
+    Vector3D operator-(Vector3D other);
     std::string print();
 
 };
