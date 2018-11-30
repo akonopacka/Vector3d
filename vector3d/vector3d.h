@@ -24,6 +24,8 @@ public:
     Vector3D operator+(Vector3D other);
     Vector3D operator-(Vector3D other);
     std::string print();
+    float dotProduct(Vector3D other);
+    Vector3D crossProduct(Vector3D other);
 
 };
 

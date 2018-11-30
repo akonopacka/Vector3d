@@ -54,3 +54,12 @@ std::string Vector3D::print(){
     std::string coordinates = "("+std::to_string(x)+","+std::to_string(y)+","+std::to_string(z)+")";
     return coordinates;
 }
+
+float Vector3D::dotProduct(Vector3D other){
+    return x*other.getX() + y*other.getY() + z*other.getZ();
+}
+
+Vector3D Vector3D::crossProduct(Vector3D other){
+    Vector3D result (y*other.getZ() - z*other.getY(), z*other.getX() - x*other.getZ(), x*other.getY() - y*other.getX());
+    return result;
+}
