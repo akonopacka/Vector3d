@@ -1,5 +1,5 @@
-#ifndef Vector3D_H
-#define Vector3D_H
+#ifndef VECTOR3D_H
+#define VECTOR3D_H
 
 #include <iostream>
 
@@ -15,6 +15,14 @@ public:
     Vector3D(float t_x, float t_y, float t_z);
     Vector3D(Vector3D*other);
     ~Vector3D();
+    float getX();
+    float getY();
+    float getZ();
+    void setX(const float t_x);
+    void setY(const float t_y);
+    void setZ(const float t_z);
+    std::string print();
+
 };
 
-#endif // Vector3D_H
+#endif // VECTOR3D_H

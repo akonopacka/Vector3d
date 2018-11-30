@@ -15,3 +15,32 @@ Vector3D::Vector3D(Vector3D* other){
 
 Vector3D::~Vector3D(){
 }
+
+float Vector3D::getX(){
+    return x;
+}
+
+float Vector3D::getY(){
+    return y;
+}
+
+float Vector3D::getZ(){
+    return z;
+}
+
+void Vector3D::setX(const float t_x){
+    x = t_x;
+}
+
+void Vector3D::setY(const float t_y){
+    y = t_y;
+}
+
+void Vector3D::setZ(const float t_z){
+    z = t_z;
+}
+
+std::string Vector3D::print(){
+    std::string coordinates = "("+std::to_string(x)+","+std::to_string(y)+","+std::to_string(z)+")";
+    return coordinates;
+}
