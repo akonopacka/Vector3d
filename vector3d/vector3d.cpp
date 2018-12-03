@@ -1,11 +1,15 @@
 #include "vector3d.h"
+
 Vector3D::Vector3D()
-    :x(0), y(0), z(0)
+    :x(1), y(1), z(1)
 {}
 
 Vector3D::Vector3D(float t_x, float t_y, float t_z)
     :x(t_x), y(t_y), z(t_z)
-{}
+{
+    if(getLength()<=0)
+        throw std::runtime_error("Null Vector");
+}
 
 Vector3D::Vector3D(Vector3D* other){
     x=other->x;
@@ -41,12 +45,16 @@ void Vector3D::setZ(const float t_z){
 }
 
 Vector3D Vector3D::operator+(Vector3D other){
-    Vector3D result(x+other.getX(),y+other.getY(),z+other.getZ());
+    Vector3D result(x+other.getX(),
+                    y+other.getY(),
+                    z+other.getZ());
     return result;
 }
 
 Vector3D Vector3D::operator-(Vector3D other){
-    Vector3D result(x-other.getX(),y-other.getY(),z-other.getZ());
+    Vector3D result(x-other.getX(),
+                    y-other.getY(),
+                    z-other.getZ());
     return result;
 }
 
@@ -60,6 +68,12 @@ float Vector3D::dotProduct(Vector3D other){
 }
 
 Vector3D Vector3D::crossProduct(Vector3D other){
-    Vector3D result (y*other.getZ() - z*other.getY(), z*other.getX() - x*other.getZ(), x*other.getY() - y*other.getX());
+    Vector3D result (y*other.getZ() - z*other.getY(),
+                     z*other.getX() - x*other.getZ(),
+                     x*other.getY() - y*other.getX());
     return result;
+}
+
+float Vector3D::getLength(){
+    return sqrt(x*x+y*y+z*z);
 }

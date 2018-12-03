@@ -2,6 +2,7 @@
 #define VECTOR3D_H
 
 #include <iostream>
+#include <cmath>
 
 class Vector3D
 {
@@ -26,7 +27,7 @@ public:
     std::string print();
     float dotProduct(Vector3D other);
     Vector3D crossProduct(Vector3D other);
-
+    float getLength();
 };
 
 #endif // VECTOR3D_H
